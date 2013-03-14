@@ -6,6 +6,11 @@ app = Flask(__name__)
 app_key = "Rrultq99nTcZ7yY4da8Iw"
 app_secret="fSXA5q1w9GeAgAfx1GHt3L8lUmSMzUFowAPKYeo6Kwc"
 
+
+@app.route("/")
+def help_page():
+	return "This is the home page"
+
 @app.route("/login")
 def login_url():
 
