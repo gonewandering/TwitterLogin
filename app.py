@@ -11,6 +11,7 @@ app_secret="fSXA5q1w9GeAgAfx1GHt3L8lUmSMzUFowAPKYeo6Kwc"
 def help_page():
 	return "This is the home page"
 
+
 @app.route("/login")
 def login_url():
 
@@ -65,6 +66,25 @@ def tweet():
 		response.data = request.args['callback']+"("+response.data+")"
 	
 	return response
+
+
+@app.route("/search")
+def search():
+	
+	t = Twython(
+		app_key=app_key,
+		app_secret=app_secret,
+		oauth_token=request.args['oauth'],
+		oauth_token_secret=request.args['token']
+	)
+	
+	search = t.search(q=request.args['q'])
+	response = jsonify(t)
+# 	
+# 	if (request.args['callback']):
+# 		response.data = request.args['callback']+"("+response.data+")"
+# 	
+	return "This far"
 
 
 if __name__ == "__main__":
