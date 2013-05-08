@@ -1,4 +1,4 @@
 TwitterLogin
 ============
 
-A simple sample using Flask and Javascript to log users in to your site using twitter
+Sample login flow using Twitter's Oauth2 API, Flask, and Javascript
